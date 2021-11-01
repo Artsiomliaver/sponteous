@@ -1,0 +1,33 @@
+@import '../../../Common/Utils/Styles/mixin.scss';
+
+.trips {
+    z-index: 1;
+    margin-top: 1rem;
+    border-top: 1px solid #DADCE9;
+    background-color: #FFFFFF;
+    padding: 20px;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include respond(mobile) {
+      width: 90%;
+    }
+    &-foter {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      &-clear {
+        color: #F05971;
+        cursor: pointer;
+      }
+      &-aplly {
+        color: #4142A6;
+        cursor: pointer;
+      }
+    }
+  }

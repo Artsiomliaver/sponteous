@@ -1,0 +1,81 @@
+@import '../../../Common/Utils/Styles/mixin.scss';
+@import '../../../Common/Utils/Styles/colors.scss';
+
+.payment_cnt_main_block {
+}
+
+.payment_cnt {
+  color: $black;
+  background-color: $bg;
+
+  .title {
+    padding-bottom: 3rem;
+  }
+  &-wrapper {
+    margin: 4rem auto 0 auto;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 76rem;
+
+    @include respond(tab) {
+      margin: 0;
+      width: 100%;
+      padding: 0;
+      max-width: none;
+    }
+  }
+
+  &-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 9rem;
+
+    @include respond(big) {
+      justify-content: center;
+    }
+
+    p {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: $input;
+
+      @include respond(tab) {
+        font-size: 2rem;
+      }
+
+      span {
+        color: $violet;
+      }
+    }
+  }
+
+  &-billing {
+    width: 55%;
+    flex-grow: 1;
+    margin-bottom: 4rem;
+  }
+  &-status {
+    width: 35%;
+    flex-grow: 1;
+    margin-left: 3%;
+  }
+  @media screen and (max-width: 1024px) {
+    &-status {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  @include respond(mobile) {
+    &-wrapper {
+      padding: 0;
+      margin: 0;
+    }
+    &-status {
+      margin-bottom: 4rem;
+    }
+  }
+}

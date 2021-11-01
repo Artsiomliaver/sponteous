@@ -1,0 +1,28 @@
+@import '../../../Common/Utils/Styles/colors.scss';
+@import '../../../Common/Utils/Styles/mixin.scss';
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  @include respond(tab) {
+    transform: translateY(2rem);
+  }
+
+  @include respond(mobile) {
+    transform: translateY(-3rem);
+  }
+
+  span {
+    color: $violet-light;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+
+    @include respond(mobile) {
+      margin-bottom: 0rem;
+    }
+  }
+}

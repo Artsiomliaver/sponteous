@@ -1,0 +1,217 @@
+@import '../../../Common/Utils/Styles/mixin.scss';
+@import '../../../Common/Utils/Styles/colors.scss';
+
+.filters {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: $white;
+  border: 1px solid $gray;
+  @include respond(tab) {
+    display: none;
+  }
+
+  &-m {
+    display: none;
+    @include respond(tab) {
+      display: block;
+    }
+    &--open {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      background-color: $white;
+      z-index: 2;
+    }
+  }
+  @include respond(tab) {
+    width: 100%;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include respond(tab) {
+      height: 50px;
+      padding: 0 20px;
+      border-bottom: solid 1px #d8d8d8;
+    }
+  }
+
+  &-button {
+    color: $red;
+    border: 0;
+    background: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: rc(12);
+
+    @include respond(mobile) {
+      font-size: 1.2rem !important;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-clearbtn {
+    color: #f05971;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 15px;
+  }
+
+  &-calendar {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(tab) {
+      display: flex;
+      justify-content: center;
+    }
+
+    .calendar {
+      @include respond(mobile) {
+        width: 100%;
+      }
+    }
+  }
+
+  &-title {
+    margin: 0;
+    @include respond(mobile) {
+      font-size: 1.2rem !important;
+    }
+  }
+  &-filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+    padding: 1rem;
+    background-color: $white;
+    border: 1px solid $gray;
+    outline: none;
+    margin-top: 1rem;
+
+    &-value {
+      margin-left: 0.75rem;
+      font-size: 0.9rem;
+
+      @include respond(phone) {
+        font-size: 1.4rem;
+      }
+
+      @include respond(mobile) {
+        font-size: 1.2rem !important;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $violet;
+      .filters-filter-prefix {
+        fill: $violet;
+      }
+    }
+
+    &-prefix {
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      fill: $gray-icon;
+    }
+
+    &-suffix {
+      &.open {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+
+  &-slider {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    &.ant-slider {
+      &:hover {
+        .ant-slider {
+          &-rail {
+            background-color: rgba($violet, 0.5);
+          }
+          &-handle {
+            border-color: $violet-dark;
+          }
+        }
+      }
+      .ant-slider {
+        &-rail {
+          background-color: rgba($violet, 0.3);
+        }
+        &-track {
+          background-color: $violet;
+        }
+        &-handle {
+          background-color: $white;
+          border-color: $violet-dark;
+        }
+      }
+    }
+  }
+}
+
+.map {
+  z-index: 2;
+  margin: auto;
+  margin-top: 30px;
+  width: 90%;
+  height: 80px;
+  display: flex;
+  padding: 12px 25px;
+  background-color: $white;
+  border: 1px solid #dadce9;
+  @include respond(tab) {
+    display: none;
+  }
+  &-filter {
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 0 25px;
+    background-color: $white;
+    @include respond(tab) {
+      padding: 5px 0px;
+    }
+
+    &-btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 3px;
+      padding: 1rem;
+      background-color: $white;
+      border: 1px solid $gray;
+      outline: none;
+    }
+    &-btn:hover,
+    :focus {
+      border-color: #4142a6;
+    }
+  }
+}

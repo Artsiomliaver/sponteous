@@ -1,0 +1,209 @@
+@import '../../../Common/Utils/Styles/mixin.scss';
+@import '../../../Common/Utils/Styles/colors.scss';
+
+.select-cnt {
+  background-color: $bg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &.calendar {
+    &::before {
+      content: '';
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+      background-color: $input;
+      z-index: 5;
+      opacity: 0.3;
+    }
+  }
+  &-block {
+    padding-top: 10rem !important;
+    padding-bottom: 3rem;
+    @include respond(tab) {
+      padding-bottom: 0;
+    }
+  }
+  &-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 8rem 0 10rem 0;
+
+    @include respond(tab) {
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 0 10rem 0;
+    }
+
+    &-title {
+      margin-top: 0;
+      margin-bottom: rc(30);
+      font-size: rc(20);
+      font-weight: 600;
+      text-align: left;
+      color: $input;
+
+      @include respond(mobile) {
+        text-align: center;
+        margin: 0 0 2rem 0 !important;
+        width: 100%;
+        font-size: 2.4rem !important;
+        line-height: 1.42;
+      }
+
+      span {
+        color: $violet;
+      }
+    }
+
+    &-filters {
+      margin-right: 1rem;
+      @include respond(tab) {
+        width: 90%;
+        margin: 0 0 3rem 0;
+      }
+      &-filter-value {
+        color: #d8d8d8;
+        font-family: Poppins;
+        font-size: 12px;
+      }
+      .capsule {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        background-color: #ffffff;
+        border: 1px solid #dadce9;
+        width: 18rem;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        @include respond(tab) {
+          display: none;
+        }
+        &-header {
+          color: #2e333b;
+          font-size: 1.1rem;
+          font-weight: 500;
+        }
+        &-text {
+          margin: 12px 0;
+          color: #7b899f;
+          font-weight: 400;
+          font-size: 0.875rem;
+          text-align: center;
+        }
+      }
+    }
+    &-destinations {
+      @include respond(tab) {
+        width: 90%;
+      }
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        @include respond(mobile) {
+          flex-direction: column;
+        }
+      }
+    }
+
+    &-destination-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 57rem;
+
+      @include respond(big) {
+        width: 58rem;
+      }
+
+      @include respond(tab) {
+        max-width: unset;
+        width: 100%;
+        justify-content: space-between;
+        .destination:nth-of-type(3n) {
+          margin-right: 0 !important;
+        }
+      }
+
+      @include respond(mobile) {
+        margin: 0 auto;
+      }
+
+      .destination:nth-of-type(3n) {
+        margin-right: auto;
+      }
+    }
+  }
+}
+.map-cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 93vh;
+  z-index: 2;
+  background: white;
+  border-top: 10px solid #4142a6;
+}
+
+// Map Infowindow style
+.gm-style .gm-style-iw-c {
+  padding: 0 !important;
+  max-width: unset !important;
+}
+.gm-style .gm-style-iw-d {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  max-width: unset !important;
+}
+.gm-ui-hover-effect {
+  visibility: hidden;
+}
+
+#iwc {
+  width: 290px;
+  .destination {
+    margin: unset !important;
+    &-bottom {
+      border: none !important;
+    }
+    @media (min-width: 576px) and (max-width: 1198.98px) {
+      width: 100% !important;
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  .gm-bundled-control-on-bottom {
+    visibility: hidden;
+  }
+}
+
+.sortbyCtrl {
+  @include respond(mobile) {
+    margin-bottom: 25px;
+  }
+  .filters-filter-value {
+    margin-left: 0;
+    margin-right: 5px;
+    color: #7b899f;
+    @include respond(mobile) {
+      font-size: 14px !important;
+    }
+  }
+  .spon-trip-modal__dropdown {
+    border: none;
+    background: none;
+    font-size: 14px;
+    text-align-last: center;
+    width: 150px;
+  }
+}
